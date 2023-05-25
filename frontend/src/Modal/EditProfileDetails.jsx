@@ -7,7 +7,6 @@ const EditProfileDetailsModal = ({ currentUser }) => {
   const profileDetails = {
     name: currentUser?.user?.name,
     location: currentUser?.user?.location,
-    // ! dob is not as readable as date_of_birth
     date_of_birth: currentUser?.user?.DateOfBirth,
   };
   const [userProfileDetails, setUserProfileDetails] = useState(profileDetails);

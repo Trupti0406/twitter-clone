@@ -248,8 +248,8 @@ const Home = () => {
                                 >
                                   <Link>
                                     <i
-                                      className={`${
-                                        singleTweet.likes.map((like) => {
+                                      className={`${singleTweet.likes.map(
+                                        (like) => {
                                           //    ! when the current user has liked a certain post show a solid heart
                                           if (
                                             like.user === auth?.user?.userId
@@ -258,9 +258,8 @@ const Home = () => {
                                           } else {
                                             return "fa-heart fa-regular pe-2 text-black";
                                           }
-                                        })
-                                        // ! when likes are zero return a regular heart
-                                      } ${
+                                        }
+                                      )} ${
                                         singleTweet?.likes?.length === 0 &&
                                         "fa-regular fa-heart pe-2 text-black"
                                       }`}

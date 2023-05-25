@@ -23,17 +23,14 @@ const SingleTweetPage = () => {
   const date = moment(singleTweet?.createdAt).fromNow();
 
   const likeRequest = async (id) => {
-    // e.stopEvent()
     const { data } = await axios.put(`/tweet/likeDislike/${id}`);
 
     if (data?.error) {
       toast.error(data?.error);
     } else {
-      // ! i am sending a boolean from the backend
       if (data?.like) {
         toast.info("Tweet Liked Successfully");
       }
-      // ! when like is true it means tweet was unliked
       if (!data?.like) {
         toast.info("Tweet Unliked Successfully");
       }
@@ -47,20 +44,12 @@ const SingleTweetPage = () => {
     if (data?.error) {
       toast.error(data?.error);
     } else {
-      // ! this is very helpful when deleting a tweet that is not a reply
-      // ! when this happens we know that we are deleting a tweet
-      // ! after deleting this tweet we navigate to the homepage because it does not make sense to stay on the single tweet page
-      // ! without the tweet
       if (data?.deletedTweetNotAReply) {
-        // toast.success('Tweet Deleted Successfully');
         navigate("/");
       }
       toast.success("Comment Deleted Successfully");
 
       if (data?.deletedTweet) {
-        // ! this will lead to the parent tweet of the deleted reply.
-        // ! this really made me feel so good
-        // ! to send data from the backend to cause conditional navigation from the frontend
         navigate(`/tweet/${data?.parentTweet}`);
       }
       singleTweetDetails();
@@ -74,7 +63,7 @@ const SingleTweetPage = () => {
     const { data } = await axios.get(`/tweet/getSingleTweet/${id}`);
   };
 
-  // ! send request to the backend to get the details of a single tweet
+  //send request to the backend to get the details of a single tweet
   const singleTweetDetails = async () => {
     const { data } = await axios.get(`/tweet/getSingleTweet/${id}`);
     if (data?.singleTweet) {
@@ -89,13 +78,6 @@ const SingleTweetPage = () => {
 
   useEffect(() => {
     singleTweetDetails();
-    // ! singleTweet?.replies changes every time we reply, that's when useEffect runs and
-    // ! singleTweetDetails is caled
-    // ! i was stuck at this for 1+ hours
-
-    // ! reloadSingleTweet is like a connection between createTweetModal and singleTweetPage
-    // ! this helps reload the singleTweet with updated replies count when I add a new comment
-    // ! I spent more than 1.5 hrs on this and was finally so happy to get this done.
   }, [id, tweetToAddACommentOn, reloadSingleTweet]);
 
   if (!singleTweet) {

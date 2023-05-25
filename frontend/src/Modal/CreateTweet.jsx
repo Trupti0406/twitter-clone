@@ -16,7 +16,6 @@ const CreateTweetModal = () => {
 
   const handleFileChange = async (e) => {
     const img = {
-      // ! reactogram
       preview: URL.createObjectURL(e.target.files[0]),
       data: e.target.files[0],
     };
@@ -33,15 +32,14 @@ const CreateTweetModal = () => {
   };
 
   const createTweetRequest = async () => {
-    // ! intialize javascript form data
     const formData = new FormData();
 
     let image_url = "";
 
     formData.append("file", file?.data);
 
-    // ! send the image to the backend
-    // ! from backend, upload the image to cloud
+    /* sending the image to the backend
+    / from backend, uploading the image to cloud */
     const { data } = await axios.post("/tweet/uploadPictureToCloud", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
@@ -51,13 +49,12 @@ const CreateTweetModal = () => {
     if (data?.error) {
       toast.error(data?.error);
     } else {
-      // ! image url coming from the backend
+      // image url coming from the backend
       image_url = data?.imgURL;
-      // console.log(image_url);
     }
 
-    // ! package the tweet and image into one object
-    // ! and then send it to the backend
+    // package the tweet and image into one object
+    // and then send it to the backend
     const finalTweetObject = {
       tweet,
       image: image_url?.url || null,
@@ -73,7 +70,6 @@ const CreateTweetModal = () => {
       if (data?.error) {
         toast.error(data?.error);
       } else {
-        // ! show react-toastify toast
         toast.success("Tweet Created Successfully");
         setFile("");
         setTweet(tweetObject);

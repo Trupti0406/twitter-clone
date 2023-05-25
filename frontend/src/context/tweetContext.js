@@ -57,7 +57,7 @@ const TweetProvider = ({ children }) => {
   const navigate = useNavigate();
   const [allTweets, setAllTweets] = useState([]);
   const [auth, setAuth] = useAuth();
-  // ! to store the tweets & replies from the single user page
+  // to store the tweets & replies from the single user page
   const [singleUserPageDetails, setSingleUserPageDetails] = useState();
   const [tweetsFromFollowingUsers, setTweetsFromFollowingUsers] = useState([]);
   const [authDetails, setAuthDetails] = useState();
@@ -86,7 +86,6 @@ const TweetProvider = ({ children }) => {
 
   // This function is used to send a delete request to backend
   const deleteRequest = async (id) => {
-    // ! delete request
     const { data } = await axios.delete(`/tweet/deleteTweet/${id}`);
 
     if (data?.error) {
@@ -133,8 +132,7 @@ const TweetProvider = ({ children }) => {
       navigate("/");
     }
 
-    // ! this get all tweets is here to assure me that I update the state after retweeting.
-    // ! but there are other better ways of doing it
+    // Updating
     getAllTweets();
   };
 
@@ -191,9 +189,6 @@ const TweetProvider = ({ children }) => {
   if (tweetsFromFollowingUsers) {
     // console.log(tweetsFromFollowingUsers);
   }
-
-  // ! create tweet Modal
-
   useEffect(() => {
     const authData = localStorage.getItem("auth");
     if (authData) {

@@ -49,17 +49,9 @@ const SingleUserPage = () => {
     getSingleUserDetails();
   }, [allTweets]);
 
-  // ! if the params id is equal to the current logged in user Id, just navigate to the profile page
-  // ! this makes sense because a logged in user should not see his/her own page with a follow button
   if (id === auth?.user?.userId) {
     navigate("/profile");
   }
-  // ! this will filter the following array based on the
-  // ! condition that if there is a following array element
-  // ! that has the id of the params.id (meaning the profile of the user which we are viewing)
-  // ! then we will show 'Unfollow' because we are already following that user.
-
-  // console.log(isFollowing,authDetails?.user?.userId);
 
   return (
     <>

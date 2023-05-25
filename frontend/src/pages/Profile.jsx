@@ -45,9 +45,6 @@ const Profile = () => {
 
   useEffect(() => {
     getSingleUserDetails();
-
-    //    ! added allTweets to the dependence array because when I delete a tweet I want to cause a re-render
-    // ! when it was not added I was not able to see my new list of updated tweets after I deleted one tweet.
   }, [allTweets, loggedInUser, renderBool]);
   return (
     <div className="container-fluid overflow-hidden bg-primary-subtle">
