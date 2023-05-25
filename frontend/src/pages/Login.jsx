@@ -26,7 +26,8 @@ const Login = () => {
   const loginRequest = async (e) => {
     e.preventDefault();
     const { data } = await axios.post(
-      "http://localhost:5000/auth/login",
+      // "http://localhost:5000/auth/login",
+      "https://twitter-server-2mbt.onrender.com/auth/login",
       loginDetails
     );
 
