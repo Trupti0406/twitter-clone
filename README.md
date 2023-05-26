@@ -4,14 +4,14 @@
 
 ## Demo Website
 
-- **👉 Render : [https://amazona.onrender.com](https://amazona.onrender.com)**
+- **👉 Render : [https://twitter-by-trupti.onrender.com](https://twitter-by-trupti.onrender.com)**
 
 ## How To Run This App Locally:
 
 ### 1. Clone repo
 
 ```
-$ git clone git@github.com:trupti0406/twitter-clone.git
+$ git clone https://github.com/Trupti0406/twitter-clone.git
 $ cd twitter-clone
 ```
 
@@ -37,10 +37,9 @@ JWT_SECRET =
 
 - Local MongoDB
   - Install it from [here](https://www.mongodb.com/try/download/community)
-  - In .env file update MONGODB_URI=mongodb://localhost/twitter-clone
-- OR Atlas Cloud MongoDB (The one I've used)
-  - Create database at [https://cloud.mongodb.com](https://cloud.mongodb.com)
-  - In .env file update MONGODB_URI=mongodb+srv://your-db-connection
+  - In the .env file update MONGODB_URI=mongodb://localhost/twitter-clone
+- OR Atlas Cloud MongoDB (The one I've used)Create a database at [https://cloud.mongodb.com](https://cloud.mongodb.com)](https://cloud.mongodb.com)
+  - In the .env file update MONGODB_URI=mongodb+srv://your-db-connection
 
 ### 4. Run the Backend
 
@@ -66,15 +65,8 @@ $ npm start
 # Features
 
 1. Login page (where user can enter the details and login)
-2. Register page (where user can enter the register detail and register)
+2. Register page (where users can enter the register detail and register)
 3. Home page (where we list all the tweets)
-4. Create Git Repository
-5. List Products
-   1. create products array
-   2. add product images
-   3. render products
-   4. style products
-6. Add page routing
-   1. npm i react-router-dom
-   2. create route for home screen
-   3. create router for product screen
+4. Profile details page (show a user profile details)
+5. Tweet Details Page (show tweet detail and also list all the replies related to that
+   tweet)
