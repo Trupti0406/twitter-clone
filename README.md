@@ -6,6 +6,15 @@
 
 - **👉 Render : [https://twitter-by-trupti.onrender.com](https://twitter-by-trupti.onrender.com)**
 
+# Features
+
+1. Login page (where user can enter the details and login)
+2. Register page (where users can enter the register detail and register)
+3. Home page (where we list all the tweets)
+4. Profile details page (show a user profile details)
+5. Tweet Details Page (show tweet detail and also list all the replies related to that
+   tweet)
+
 ## How To Run This App Locally:
 
 ### 1. Clone repo
@@ -58,15 +67,6 @@ $ npm install
 $ npm start
 ```
 
-## Support
+## Contact
 
 - **Contact Creator: [Trupti Yadav](mailto:truptivijayyadav27@gmail.com)**
-
-# Features
-
-1. Login page (where user can enter the details and login)
-2. Register page (where users can enter the register detail and register)
-3. Home page (where we list all the tweets)
-4. Profile details page (show a user profile details)
-5. Tweet Details Page (show tweet detail and also list all the replies related to that
-   tweet)

@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useAuth } from "./context/authContext";
 
+// Route to authenticate the entire pp
 const AuthenticatedRoute = ({ children }) => {
   const [auth, setAuth] = useAuth();
   const navigate = useNavigate();
