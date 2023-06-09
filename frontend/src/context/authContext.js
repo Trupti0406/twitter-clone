@@ -14,7 +14,7 @@ const AuthProvider = ({ children }) => {
 
   // Setting the default base URL and common header for axios requests
   //axios.defaults.baseURL = "http://localhost:5000/";
-  axios.defaults.baseURL = "https://twitter-server-2mbt.onrender.com";
+  axios.defaults.baseURL = "https://twitter-server-2mbt.onrender.com/";
 
   axios.defaults.headers.common = { Authorization: `Bearer ${auth?.token}` };
   useEffect(() => {
