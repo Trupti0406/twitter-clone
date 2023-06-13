@@ -8,15 +8,11 @@ const tweetRoutes = require("./routes/tweetRoutes.js");
 const userRoutes = require("./routes/userRoutes.js");
 // Although we are not using the cloudinary variable anywhere,
 // we still need to import it here, without the import we can't upload images in tweet
-const cloudinary = require("./utilities/cloudinaryConfig.js"); // Require the cloudinaryConfig.js file
+//const cloudinary = require("./utilities/cloudinaryConfig.js"); // Require the cloudinaryConfig.js file
 
 dotenv.config();
 // to get rid of CORS (cross-origin resource sharing) error
-app.use(
-  cors({
-    origin: "https://twitter-server-2mbt.onrender.com",
-  })
-);
+app.use(cors());
 
 app.use(express.json());
 
