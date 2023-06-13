@@ -24,7 +24,7 @@ const Register = () => {
   const registerRequest = async (e) => {
     e.preventDefault();
     const { data } = await axios.post(
-      "https://twitter-server-2mbt.onrender.com/auth/register",
+      "http://localhost:5000/auth/register",
       registerDetails
     );
     if (data?.error) {
